@@ -1,7 +1,8 @@
-from myList import MyList
+"""основной модуль с функциями"""
+from mylist import MyList
 
 
-def compare_average(list_first: list, list_second: list) -> str:
+def compare_average(list_first: list, list_second: list):
     """
     Сравнивает средние значения списков:
     :param list_first: первый список для сравнения
@@ -15,11 +16,13 @@ def compare_average(list_first: list, list_second: list) -> str:
     try:
         first = MyList(list_first)
         second = MyList(list_second)
+        result = ''
         if first > second:
-            return f"Первый список имеет большее среднее значение"
-        elif first < second:
-            return "Второй список имеет большее среднее значение"
-        elif first == second:
-            return "Средние значения равны"
-    except:
+            result = "Первый список имеет большее среднее значение"
+        if first < second:
+            result = "Второй список имеет большее среднее значение"
+        if first == second:
+            result = "Средние значения равны"
+    except TypeError:
         return 'что-то пошло не так'
+    return result

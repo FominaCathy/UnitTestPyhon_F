@@ -1,23 +1,26 @@
+"""класс и его определение """
 class MyList(list):
+    """расширение класса list  с возможностью сравнивать по среднему значению """
 
     def __init__(self, mylist: list):
         super().__init__()
-        self.mylist = mylist
+        self.my_list = mylist
 
     @property
     def average(self):
         """
         Рассчитывает среднее значение каждого списка.
         :param mylist: список для которого расчитыватся среднее значение
-        :return: среднее значение всех элементов, расчитанное по формуле: (сумма элементов)/(кол-во элементов).
+        :return: среднее значение, расчитанное по формуле: (сумма элементов)/(кол-во элементов).
                 Если список пустой или расчитать среденее не удалось, то возвращается None
         """
 
         try:
-            average = sum(self.mylist) / len(self.mylist)
-        except:
+            average = sum(self.my_list) / len(self.my_list)
+        except ZeroDivisionError:
             return None
-
+        except TypeError:
+            return None
         return average
 
     def __eq__(self, other: list):

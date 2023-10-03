@@ -1,0 +1,10 @@
+************* Module –reports=y
+–reports=y:1:0: F0001: No module named –reports=y (fatal)
+************* Module text
+text:1:0: F0001: No module named text (fatal)
+************* Module test_MyList
+test_MyList.py:1:0: C0103: Module name "test_MyList" doesn't conform to snake_case naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 0.00/10 (previous run: 0.00/10, +0.00)
+
